@@ -1,0 +1,315 @@
+This XML file does not appear to have any style information associated with it. The document tree is shown below.
+<wsdl:definitions xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://CIB/InitiateLoanRequest.tws" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdlsoap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:intf="http://CIB/InitiateLoanRequest.tws" targetNamespace="http://CIB/InitiateLoanRequest.tws">
+<wsdl:types>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:impl="http://CIB/InitiateLoanRequest.tws" xmlns:impl1="http://CIT" xmlns:impl2="http://lombardi.ibm.com/schema/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://CIB/InitiateLoanRequest.tws">
+<import namespace="http://CIT"/>
+<import namespace="http://lombardi.ibm.com/schema/"/>
+<element name="initialeLoanRequest">
+<complexType>
+<sequence>
+<element name="loanRequest" type="impl:LoanRequest"/>
+</sequence>
+</complexType>
+</element>
+<element name="initialeLoanRequestResponse">
+<complexType>
+<sequence>
+<element name="loanRequest" type="impl:LoanRequest"/>
+</sequence>
+</complexType>
+</element>
+<complexType name="LegalForm">
+<sequence>
+<element maxOccurs="1" minOccurs="0" name="legalFormCode" nillable="false" type="xsd:int"/>
+<element maxOccurs="1" minOccurs="0" name="legalFormName" nillable="false" type="xsd:string"/>
+<element maxOccurs="1" minOccurs="0" name="legalFormDescription" nillable="false" type="xsd:string"/>
+</sequence>
+</complexType>
+<complexType name="Company">
+<sequence>
+<element maxOccurs="1" minOccurs="0" name="companyName" nillable="false" type="xsd:string"/>
+<element maxOccurs="1" minOccurs="0" name="commercialRegNumber" nillable="false" type="xsd:int"/>
+<element maxOccurs="1" minOccurs="0" name="commercialRegisterationOffice" nillable="false" type="impl:NameValuePair"/>
+<element maxOccurs="1" minOccurs="0" name="lastCommercialRegDate" nillable="false" type="xsd:dateTime"/>
+<element maxOccurs="1" minOccurs="0" name="numberOfEmployees" nillable="false" type="xsd:int"/>
+<element maxOccurs="1" minOccurs="0" name="shareholderIDs" nillable="false" type="impl:ArrayOf_NameValuePair"/>
+<element maxOccurs="1" minOccurs="0" name="businessActivityBrief" nillable="false" type="xsd:string"/>
+<element maxOccurs="1" minOccurs="0" name="businessActivityStartDate" nillable="false" type="xsd:dateTime"/>
+<element maxOccurs="1" minOccurs="0" name="shareOfWomenInEquity" nillable="false" type="xsd:int"/>
+<element maxOccurs="1" minOccurs="0" name="numberOfWomenInManagerialPositions" nillable="false" type="xsd:int"/>
+<element maxOccurs="1" minOccurs="0" name="salesVolumeAmountInEGP" nillable="false" type="impl:ArrayOf_DateValuePair"/>
+<element maxOccurs="1" minOccurs="0" name="totalAssetsValueInEGP" nillable="false" type="xsd:string"/>
+<element maxOccurs="1" minOccurs="0" name="industry" nillable="false" type="impl:NameValuePair"/>
+<element maxOccurs="1" minOccurs="0" name="isBorrower" nillable="false" type="xsd:boolean"/>
+<element maxOccurs="1" minOccurs="0" name="taxCardNumber" nillable="false" type="xsd:string"/>
+<element maxOccurs="1" minOccurs="0" name="hasSisterCompanies" nillable="false" type="xsd:boolean"/>
+<element maxOccurs="1" minOccurs="0" name="sisterCompanies" nillable="false" type="impl:ArrayOf_SisterCompany"/>
+<element maxOccurs="1" minOccurs="0" name="suppliers" nillable="false" type="impl:ArrayOf_Supplier"/>
+<element maxOccurs="1" minOccurs="0" name="buyers" nillable="false" type="impl:ArrayOf_Buyer"/>
+<element maxOccurs="1" minOccurs="0" name="commercialRegDocuments" nillable="false" type="impl:ArrayOf_ECMDocumentInfo"/>
+<element maxOccurs="1" minOccurs="0" name="taxCardDocuments" nillable="false" type="impl:ArrayOf_ECMDocumentInfo"/>
+<element maxOccurs="1" minOccurs="0" name="iscoreAssessmentSheet" nillable="false" type="impl:ArrayOf_ECMDocumentInfo"/>
+<element maxOccurs="1" minOccurs="0" name="shareholdersOrPartnersNIDDocuments" nillable="false" type="impl:ArrayOf_ECMDocumentInfo"/>
+<element maxOccurs="1" minOccurs="0" name="lastEstablishmentContractDocuments" nillable="false" type="impl:ArrayOf_ECMDocumentInfo"/>
+<element maxOccurs="1" minOccurs="0" name="establishmentContractDocuments" nillable="false" type="impl:ArrayOf_ECMDocumentInfo"/>
+<element maxOccurs="1" minOccurs="0" name="industrialLicenseDocuments" nillable="false" type="impl:ArrayOf_ECMDocumentInfo"/>
+<element maxOccurs="1" minOccurs="0" name="industrialRegisterDocuments" nillable="false" type="impl:ArrayOf_ECMDocumentInfo"/>
+<element maxOccurs="1" minOccurs="0" name="vatRegistrationDocuments" nillable="false" type="impl:ArrayOf_ECMDocumentInfo"/>
+<element maxOccurs="1" minOccurs="0" name="commercialRegisterCmisDocumentOptions" nillable="false" type="impl:CMISDocumentOptions"/>
+<element maxOccurs="1" minOccurs="0" name="taxCardCmisDocumentOptions" nillable="false" type="impl:CMISDocumentOptions"/>
+<element maxOccurs="1" minOccurs="0" name="iscoreAssessmentSheetCmisDocOptions" nillable="false" type="impl:CMISDocumentOptions"/>
+<element maxOccurs="1" minOccurs="0" name="shareholdersCmisDocumentOptions" nillable="false" type="impl:CMISDocumentOptions"/>
+<element maxOccurs="1" minOccurs="0" name="establishmentContractCmisDocumentOptions" nillable="false" type="impl:CMISDocumentOptions"/>
+<element maxOccurs="1" minOccurs="0" name="lastEstablishmentAmendmentCmisDocumentOptions" nillable="false" type="impl:CMISDocumentOptions"/>
+<element maxOccurs="1" minOccurs="0" name="industrialLicenseCmisDocumentOptions" nillable="false" type="impl:CMISDocumentOptions"/>
+<element maxOccurs="1" minOccurs="0" name="industrialRegisterCmisDocumentOptions" nillable="false" type="impl:CMISDocumentOptions"/>
+<element maxOccurs="1" minOccurs="0" name="vatCmisDocumentOptions" nillable="false" type="impl:CMISDocumentOptions"/>
+</sequence>
+</complexType>
+<complexType name="Buyer">
+<sequence>
+<element maxOccurs="1" minOccurs="0" name="buyerName" nillable="false" type="xsd:string"/>
+<element maxOccurs="1" minOccurs="0" name="buyerContactName" nillable="false" type="xsd:string"/>
+<element maxOccurs="1" minOccurs="0" name="buyerContactPhoneNumber" nillable="false" type="xsd:string"/>
+<element maxOccurs="1" minOccurs="0" name="buyerLOB" nillable="false" type="xsd:string"/>
+</sequence>
+</complexType>
+<complexType name="LoanRequest">
+<sequence>
+<element maxOccurs="1" minOccurs="0" name="customerName" nillable="false" type="xsd:string"/>
+<element maxOccurs="1" minOccurs="0" name="customerNID" nillable="false" type="xsd:string"/>
+<element maxOccurs="1" minOccurs="0" name="customerMobileNumber" nillable="false" type="xsd:string"/>
+<element maxOccurs="1" minOccurs="0" name="company" nillable="false" type="impl:Company"/>
+<element maxOccurs="1" minOccurs="0" name="proposedContractDocuments" nillable="false" type="impl:ArrayOf_ECMDocumentInfo"/>
+<element maxOccurs="1" minOccurs="0" name="signedConractDocuments" nillable="false" type="impl:ArrayOf_ECMDocumentInfo"/>
+<element maxOccurs="1" minOccurs="0" name="requiredLoanAmount" nillable="false" type="xsd:int"/>
+<element maxOccurs="1" minOccurs="0" name="requiredLoanTenor" nillable="false" type="impl:NameValuePair"/>
+<element maxOccurs="1" minOccurs="0" name="requiredLoanType" nillable="false" type="impl:NameValuePair"/>
+<element maxOccurs="1" minOccurs="0" name="creditInvestigation" nillable="false" type="impl:CreditInvestigationRemarks"/>
+<element maxOccurs="1" minOccurs="0" name="growthOfficerRemarks" nillable="false" type="xsd:string"/>
+<element maxOccurs="1" minOccurs="0" name="creditInvestigationRemarks" nillable="false" type="xsd:string"/>
+<element maxOccurs="1" minOccurs="0" name="creditAdminRemarks" nillable="false" type="xsd:string"/>
+<element maxOccurs="1" minOccurs="0" name="growthManagerRemarks" nillable="false" type="xsd:string"/>
+<element maxOccurs="1" minOccurs="0" name="proposedContractCmisDocOptions" nillable="false" type="impl:CMISDocumentOptions"/>
+<element maxOccurs="1" minOccurs="0" name="signedContractCmisDocOptions" nillable="false" type="impl:CMISDocumentOptions"/>
+</sequence>
+</complexType>
+<complexType name="Supplier">
+<sequence>
+<element maxOccurs="1" minOccurs="0" name="commercialRegNumber" nillable="false" type="xsd:int"/>
+<element maxOccurs="1" minOccurs="0" name="commercialRegDate" nillable="false" type="xsd:dateTime"/>
+<element maxOccurs="1" minOccurs="0" name="supplierName" nillable="false" type="xsd:string"/>
+<element maxOccurs="1" minOccurs="0" name="supplierLOB" nillable="false" type="xsd:string"/>
+<element maxOccurs="1" minOccurs="0" name="supplierContactPersonName" nillable="false" type="xsd:string"/>
+<element maxOccurs="1" minOccurs="0" name="supplierContactPersonPhoneNumber" nillable="false" type="xsd:string"/>
+<element maxOccurs="1" minOccurs="0" name="supplierContactPersonAddress" nillable="false" type="xsd:string"/>
+<element maxOccurs="1" minOccurs="0" name="commercialRegDocuments" nillable="false" type="impl:ArrayOf_ECMDocumentInfo"/>
+<element maxOccurs="1" minOccurs="0" name="commercialRegDocumentsCmisDocOptions" nillable="false" type="impl:CMISDocumentOptions"/>
+</sequence>
+</complexType>
+<complexType name="CreditInvestigationRemarks">
+<sequence>
+<element maxOccurs="1" minOccurs="0" name="statusRemarks" nillable="false" type="xsd:string"/>
+<element maxOccurs="1" minOccurs="0" name="ciReportDocuments" nillable="false" type="impl:ArrayOf_ECMDocumentInfo"/>
+<element maxOccurs="1" minOccurs="0" name="ciFeedback" nillable="false" type="impl:NameValuePair"/>
+<element maxOccurs="1" minOccurs="0" name="rejectionReason" nillable="false" type="impl:NameValuePair"/>
+<element maxOccurs="1" minOccurs="0" name="ciReportDate" nillable="false" type="xsd:dateTime"/>
+<element maxOccurs="1" minOccurs="0" name="companyNameFromCI" nillable="false" type="xsd:string"/>
+<element maxOccurs="1" minOccurs="0" name="companyAddressFromCI" nillable="false" type="xsd:string"/>
+<element maxOccurs="1" minOccurs="0" name="commercialRegNumberFromCI" nillable="false" type="xsd:int"/>
+<element maxOccurs="1" minOccurs="0" name="rightOfAdminAndSignatureFromCI" nillable="false" type="xsd:string"/>
+<element maxOccurs="1" minOccurs="0" name="ciSemiOrAnnualReview" nillable="false" type="impl:ArrayOf_ECMDocumentInfo"/>
+<element maxOccurs="1" minOccurs="0" name="businessActivityBrief" nillable="false" type="xsd:string"/>
+<element maxOccurs="1" minOccurs="0" name="smsFeedBack" nillable="false" type="xsd:string"/>
+<element maxOccurs="1" minOccurs="0" name="ciReportCmisDocOptions" nillable="false" type="impl:CMISDocumentOptions"/>
+<element maxOccurs="1" minOccurs="0" name="semiOrAnnualReviewCmisDocOptions" nillable="false" type="impl:CMISDocumentOptions"/>
+</sequence>
+</complexType>
+<complexType name="SisterCompany">
+<sequence>
+<element maxOccurs="1" minOccurs="0" name="companyName" nillable="false" type="xsd:string"/>
+<element maxOccurs="1" minOccurs="0" name="companyAddress" nillable="false" type="xsd:string"/>
+<element maxOccurs="1" minOccurs="0" name="commercialRegNumber" nillable="false" type="xsd:int"/>
+<element maxOccurs="1" minOccurs="0" name="commercialRegisterationOffice" nillable="false" type="impl:NameValuePair"/>
+<element maxOccurs="1" minOccurs="0" name="businessActivityBrief" nillable="false" type="xsd:string"/>
+<element maxOccurs="1" minOccurs="0" name="legalForm" nillable="false" type="impl:LegalForm"/>
+<element maxOccurs="1" minOccurs="0" name="relationshipType" nillable="false" type="impl:NameValuePair"/>
+<element maxOccurs="1" minOccurs="0" name="commercialRegDocuments" nillable="false" type="impl:ArrayOf_ECMDocumentInfo"/>
+<element maxOccurs="1" minOccurs="0" name="commercialRegDocumentsCmisDocOptions" nillable="false" type="impl:CMISDocumentOptions"/>
+</sequence>
+</complexType>
+<complexType name="DateValuePair">
+<sequence>
+<element maxOccurs="1" minOccurs="0" name="date" nillable="false" type="xsd:dateTime"/>
+<element maxOccurs="1" minOccurs="0" name="value" nillable="false" type="xsd:string"/>
+</sequence>
+</complexType>
+<complexType name="NameValuePair">
+<sequence>
+<element maxOccurs="1" minOccurs="0" name="name" nillable="false" type="xsd:string"/>
+<element maxOccurs="1" minOccurs="0" name="value" nillable="false" type="xsd:string"/>
+</sequence>
+</complexType>
+<complexType name="ECMDocumentInfo">
+<sequence>
+<element maxOccurs="1" minOccurs="0" name="contentURL" nillable="false" type="xsd:string"/>
+<element maxOccurs="1" minOccurs="0" name="objectId" nillable="false" type="xsd:string"/>
+<element maxOccurs="1" minOccurs="0" name="serverName" nillable="false" type="xsd:string"/>
+</sequence>
+</complexType>
+<complexType name="CMISDocumentOptions">
+<sequence>
+<element maxOccurs="1" minOccurs="0" name="parentFolderPath" nillable="false" type="xsd:string"/>
+<element maxOccurs="1" minOccurs="0" name="cmisQuery" nillable="false" type="xsd:string"/>
+</sequence>
+</complexType>
+<complexType name="ArrayOf_Buyer">
+<sequence>
+<element maxOccurs="unbounded" minOccurs="0" name="item" nillable="true" type="impl:Buyer"/>
+</sequence>
+</complexType>
+<complexType name="ArrayOf_Supplier">
+<sequence>
+<element maxOccurs="unbounded" minOccurs="0" name="item" nillable="true" type="impl:Supplier"/>
+</sequence>
+</complexType>
+<complexType name="ArrayOf_SisterCompany">
+<sequence>
+<element maxOccurs="unbounded" minOccurs="0" name="item" nillable="true" type="impl:SisterCompany"/>
+</sequence>
+</complexType>
+<complexType name="ArrayOf_DateValuePair">
+<sequence>
+<element maxOccurs="unbounded" minOccurs="0" name="item" nillable="true" type="impl:DateValuePair"/>
+</sequence>
+</complexType>
+<complexType name="ArrayOf_string">
+<sequence>
+<element maxOccurs="unbounded" minOccurs="0" name="item" nillable="true" type="xsd:string"/>
+</sequence>
+</complexType>
+<complexType name="ArrayOf_int">
+<sequence>
+<element maxOccurs="unbounded" minOccurs="0" name="item" nillable="true" type="xsd:int"/>
+</sequence>
+</complexType>
+<complexType name="ArrayOf_dateTime">
+<sequence>
+<element maxOccurs="unbounded" minOccurs="0" name="item" nillable="true" type="xsd:dateTime"/>
+</sequence>
+</complexType>
+<complexType name="ArrayOf_ECMDocumentInfo">
+<sequence>
+<element maxOccurs="unbounded" minOccurs="0" name="item" nillable="true" type="impl:ECMDocumentInfo"/>
+</sequence>
+</complexType>
+<complexType name="ArrayOf_CMISDocumentOptions">
+<sequence>
+<element maxOccurs="unbounded" minOccurs="0" name="item" nillable="true" type="impl:CMISDocumentOptions"/>
+</sequence>
+</complexType>
+<complexType name="ArrayOf_NameValuePair">
+<sequence>
+<element maxOccurs="unbounded" minOccurs="0" name="item" nillable="true" type="impl:NameValuePair"/>
+</sequence>
+</complexType>
+<complexType name="ArrayOf_LegalForm">
+<sequence>
+<element maxOccurs="unbounded" minOccurs="0" name="item" nillable="true" type="impl:LegalForm"/>
+</sequence>
+</complexType>
+</schema>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:impl="http://CIB/InitiateLoanRequest.tws" xmlns:impl1="http://CIT" xmlns:impl2="http://lombardi.ibm.com/schema/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://CIT">
+<import namespace="http://CIB/InitiateLoanRequest.tws">
+<!--
+Add URI of the schema document for the imported namespace using 'schemaLocation' attribute.
+-->
+</import>
+<import namespace="http://lombardi.ibm.com/schema/">
+<!--
+Add URI of the schema document for the imported namespace using 'schemaLocation' attribute.
+-->
+</import>
+<complexType name="CMISDocumentOptions">
+<sequence>
+<element maxOccurs="1" minOccurs="0" name="parentFolderPath" nillable="false" type="xsd:string"/>
+<element maxOccurs="1" minOccurs="0" name="cmisQuery" nillable="false" type="xsd:string"/>
+</sequence>
+</complexType>
+<complexType name="ECMDocumentInfo">
+<sequence>
+<element maxOccurs="1" minOccurs="0" name="contentURL" nillable="false" type="xsd:string"/>
+<element maxOccurs="1" minOccurs="0" name="objectId" nillable="false" type="xsd:string"/>
+<element maxOccurs="1" minOccurs="0" name="serverName" nillable="false" type="xsd:string"/>
+</sequence>
+</complexType>
+<complexType name="ArrayOf_ECMDocumentInfo">
+<sequence>
+<element maxOccurs="unbounded" minOccurs="0" name="item" nillable="true" type="impl1:ECMDocumentInfo"/>
+</sequence>
+</complexType>
+<complexType name="ArrayOf_string">
+<sequence>
+<element maxOccurs="unbounded" minOccurs="0" name="item" nillable="true" type="xsd:string"/>
+</sequence>
+</complexType>
+</schema>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:impl="http://CIB/InitiateLoanRequest.tws" xmlns:impl1="http://CIT" xmlns:impl2="http://lombardi.ibm.com/schema/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://lombardi.ibm.com/schema/">
+<import namespace="http://CIB/InitiateLoanRequest.tws">
+<!--
+Add URI of the schema document for the imported namespace using 'schemaLocation' attribute.
+-->
+</import>
+<import namespace="http://CIT">
+<!--
+Add URI of the schema document for the imported namespace using 'schemaLocation' attribute.
+-->
+</import>
+<complexType name="NameValuePair">
+<sequence>
+<element maxOccurs="1" minOccurs="0" name="name" nillable="false" type="xsd:string"/>
+<element maxOccurs="1" minOccurs="0" name="value" nillable="false" type="xsd:string"/>
+</sequence>
+</complexType>
+<complexType name="ArrayOf_NameValuePair">
+<sequence>
+<element maxOccurs="unbounded" minOccurs="0" name="item" nillable="true" type="impl2:NameValuePair"/>
+</sequence>
+</complexType>
+<complexType name="ArrayOf_string">
+<sequence>
+<element maxOccurs="unbounded" minOccurs="0" name="item" nillable="true" type="xsd:string"/>
+</sequence>
+</complexType>
+</schema>
+</wsdl:types>
+<wsdl:message name="initialeLoanRequestRequest">
+<wsdl:part name="parameters" element="impl:initialeLoanRequest"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="initialeLoanRequestResponse">
+<wsdl:part name="parameters" element="impl:initialeLoanRequestResponse"></wsdl:part>
+</wsdl:message>
+<wsdl:portType name="InitiateLoanRequestPortType">
+<wsdl:operation name="initialeLoanRequest">
+<wsdl:input name="initialeLoanRequestRequest" message="impl:initialeLoanRequestRequest"></wsdl:input>
+<wsdl:output name="initialeLoanRequestResponse" message="impl:initialeLoanRequestResponse"></wsdl:output>
+</wsdl:operation>
+</wsdl:portType>
+<wsdl:binding name="soap12InitiateLoanRequestSoapSoapBinding" type="impl:InitiateLoanRequestPortType">
+<wsdlsoap12:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+<wsdl:operation name="initialeLoanRequest">
+<wsdlsoap12:operation soapAction="http://CIB/InitiateLoanRequest.tws/initialeLoanRequest"/>
+<wsdl:input name="initialeLoanRequestRequest">
+<wsdlsoap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output name="initialeLoanRequestResponse">
+<wsdlsoap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+</wsdl:binding>
+<wsdl:service name="InitiateLoanRequest">
+<wsdl:port name="soap12InitiateLoanRequestSoap" binding="impl:soap12InitiateLoanRequestSoapSoapBinding">
+<wsdlsoap12:address location="https://172.16.85.141:9443/teamworks/webservices/CIB/InitiateLoanRequest.tws"/>
+</wsdl:port>
+</wsdl:service>
+</wsdl:definitions>

@@ -19,7 +19,10 @@
     "@angular/platform-browser": "~11.2.8",
     "@angular/platform-browser-dynamic": "~11.2.8",
     "@angular/router": "~11.2.8",
+    "core-js": "^3.12.1",
+    "js2xmlparser": "^4.0.1",
     "rxjs": "~6.6.0",
+    "stream": "0.0.2",
     "tslib": "^2.0.0",
     "zone.js": "~0.11.3"
   },
